@@ -10,7 +10,7 @@ PROJECT=$1
 shift
 BUCKET=$1
 shift
-MAIN=com.traffic-demo.$1
+MAIN=com.google.cloud.training.dataanalyst.sandiego.$1
 shift
 
 echo "Launching $MAIN project=$PROJECT bucket=$BUCKET $*"
@@ -21,7 +21,10 @@ mvn compile -e exec:java \
       -Dexec.args="--project=$PROJECT \
       --stagingLocation=gs://$BUCKET/staging/ $* \
       --tempLocation=gs://$BUCKET/staging/ \
-      --runner=DataflowRunner"
+      --runner=DataflowRunner \
+      --maxNumWorkers=2 \
+      --workerMachineType=n1-standard-2"
+
 
 
 # If you run into quota problems, add this option the command line above
