@@ -21,7 +21,7 @@ import datetime
 from google.cloud import pubsub
 
 TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
-TOPIC = 'traffic-demo'
+TOPIC = 'sandiego'
 INPUT = 'sensor_obs2008.csv.gz'
 
 def publish(publisher, topic, events):
