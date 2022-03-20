@@ -14,7 +14,7 @@
  * the License.
  */
 
-package com.google.cloud.training.dataanalyst.sandiego;
+package com.traffic-demo;
 
 import java.util.ArrayList;
 import java.util.List;
