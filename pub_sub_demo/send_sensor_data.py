@@ -18,7 +18,7 @@ import gzip
 import logging
 import argparse
 import datetime
-from google.cloud import pubsub
+from google.cloud import pubsub_v1 #Upgarding the library
 
 TIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 TOPIC = 'sandiego'
@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
    # create Pub/Sub notification topic
    logging.basicConfig(format='%(levelname)s: %(message)s', level=logging.INFO)
-   publisher = pubsub.PublisherClient()
+   publisher = pubsub_v1.PublisherClient()
    event_type = publisher.topic_path(args.project,TOPIC)
    try:
       publisher.get_topic(event_type)
